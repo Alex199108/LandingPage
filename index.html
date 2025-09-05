@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/logo.png" alt="Your Brand" class="logo-img">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="hero">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <h1>Build. Innovate. Deliver.</h1>
+                    <p>I'm Anton Alexandru Răzvan, a passionate developer focused on creating modern, scalable, and user-friendly applications. With strong foundations in front-end and application development, I'm continuously expanding my portfolio and sharpening my skills to deliver real value through clean code and efficient solutions.</p>
+                    <button class="cta-button" onclick="scrollToSection('contact')">Discover My Journey</button>
+                </div>
+                <div class="laptop-container">
+                    <div class="laptop">
+                        <div class="laptop-screen">
+                            <div class="code-display">
+                                <div class="code-line">
+                                    <span class="code-keyword">function</span> 
+                                    <span class="code-function">createApp</span>() {
+                                </div>
+                                <div class="code-line">
+                                    &nbsp;&nbsp;<span class="code-keyword">const</span> 
+                                    <span class="code-variable">app</span> = 
+                                    <span class="code-string">'Hello World'</span>;
+                                </div>
+                                <div class="code-line">
+                                    &nbsp;&nbsp;<span class="code-keyword">return</span> 
+                                    <span class="code-variable">app</span>;
+                                </div>
+                                <div class="code-line">}</div>
+                                <div class="code-line">&nbsp;</div>
+                                <div class="code-line">
+                                    <span class="code-function">createApp</span>();
+                                </div>
+                                <div class="cursor"></div>
+                            </div>
+                        </div>
+                        <div class="laptop-base"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <div class="timeline-container">
+                        <div class="timeline">
+                            <div class="timeline-item" data-aos="fade-right" data-aos-delay="100">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h4>Foundation Building</h4>
+                                    <p>Started my journey with HTML, CSS, and JavaScript, building responsive and interactive web experiences.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item" data-aos="fade-right" data-aos-delay="300">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h4>UX & Performance Focus</h4>
+                                    <p>Developed an eye for user experience design and optimized performance to create seamless applications.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item" data-aos="fade-right" data-aos-delay="500">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h4>Expanding Horizons</h4>
+                                    <p>Currently expanding into React and Node.js to become a full-stack developer with modern frameworks.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item" data-aos="fade-right" data-aos-delay="700">
+                                <div class="timeline-dot active"></div>
+                                <div class="timeline-content">
+                                    <h4>Future Vision</h4>
+                                    <p>Aiming to build scalable applications that solve real-world problems and make a meaningful impact.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-card-container">
+                        <div class="glass-card" data-aos="fade-left" data-aos-delay="200">
+                            <div class="quote">
+                                <p>"Code is like poetry; it should be elegant, purposeful, and leave a lasting impression."</p>
+                            </div>
+                            <div class="author">
+                                <h3>Anton Alexandru Răzvan</h3>
+                                <div class="signature">Anton</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <div class="container">
+                <h2>Our Services</h2>
+                <div class="service-grid">
+                    <div class="service-card">
+                        <h3>Web Development</h3>
+                        <p>Responsive websites built with HTML, CSS, and JavaScript, tailored to provide a clean and functional user experience.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>UI/UX Design</h3>
+                        <p>Modern layouts and user-friendly interfaces, with a focus on accessibility and visual appeal</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Learning & Growth Projects</h3>
+                        <p>Currently working on hands-on projects to expand my expertise in front-end and full-stack development, while delivering value through code</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <form id="contactForm">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                    <input type="email" id="email" placeholder="Your Email" required>
+                    <textarea id="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 YourBrand. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

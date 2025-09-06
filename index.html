@@ -13,7 +13,7 @@
                 <img src="images/logo.png" alt="Your Brand" class="logo-img">
             </div>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
+                <li><a href="#hero">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -113,7 +113,7 @@
 
         <section id="services" class="services">
             <div class="container">
-                <h2>Our Services</h2>
+                <h2>What I Do</h2>
                 <div class="service-grid">
                     <div class="service-card">
                         <h3>Web Development</h3>
@@ -133,20 +133,31 @@
 
         <section id="contact" class="contact">
             <div class="container">
-                <h2>Contact Us</h2>
-                <form id="contactForm">
-                    <input type="text" id="name" placeholder="Your Name" required>
-                    <input type="email" id="email" placeholder="Your Email" required>
-                    <textarea id="message" placeholder="Your Message" required></textarea>
+                <h2>Contact Me</h2>
+                <form id="contactForm" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+                    <input type="hidden" name="form-name" value="contact" />
+                    <p style="display: none;">
+                        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                    </p>
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
                     <button type="submit">Send Message</button>
                 </form>
+                <div id="form-success" class="form-message success" style="display: none;">
+                    <p>✅ Thank you! Your message has been sent successfully. I'll get back to you soon!</p>
+                </div>
+                <div id="form-error" class="form-message error" style="display: none;">
+                    <p>❌ Oops! Something went wrong. Please try again later.</p>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 YourBrand. All rights reserved.</p>
+            <img src="/images/logo.png" alt="Your Brand" class="footer-img" >
+            <p>&copy; 2025  All rights reserved. </p>
         </div>
     </footer>
 

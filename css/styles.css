@@ -18,7 +18,7 @@ body {
 }
 
 header {
-    background: #1a1a1a;
+    background: #000000;
     box-shadow: 0 2px 5px rgba(255,255,255,0.1);
     position: fixed;
     width: 100%;
@@ -52,9 +52,22 @@ nav {
     font-weight: 500;
     transition: color 0.3s ease;
 }
-
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  right: 0;             /* începe din dreapta */
+  bottom: -2px;         /* sub text */
+  width: 0%;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease;
+}
 .nav-links a:hover {
     color: #5afae7;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
 }
 
 .hero {
@@ -226,7 +239,7 @@ nav {
 }
 
 .about {
-    background: rgba(26, 31, 36, 0.3);;
+    background: #000000;
 }
 
 .about h2, .services h2, .contact h2 {
@@ -429,12 +442,13 @@ nav {
     backdrop-filter: blur(20px);
     border: 1px solid rgba(90, 250, 231, 0.1);
     border-radius: 20px;
-box-shadow: 
+    box-shadow: 
         0 8px 32px rgba(0, 0, 0, 0.3),
         inset 0 1px 0 rgba(255, 255, 255, 0.1);
     opacity: 0;
     transform: translateX(30px);
     animation: slideInRight 0.8s ease 0.2s forwards;
+    transition: all 0.3s ease;
 }
 
 .service-card:hover {
@@ -442,7 +456,11 @@ box-shadow:
     inset 2px 2px 4px rgba(0, 0, 0, 0.7),
     inset -2px -2px 4px rgba(255, 255, 255, 0.05),
     0 4px 12px rgba(0, 0, 0, 0.5);
+  transform: scale(1.05) translateY(-5px) !important;
 }
+
+
+
 
 .service-card h3 {
     color: #5afae7;
@@ -451,7 +469,7 @@ box-shadow:
 }
 
 .contact {
-    background: rgba(26, 31, 36, 0.3);
+    background: #000000;
 }
 
 #contactForm {
@@ -495,12 +513,55 @@ box-shadow:
      box-shadow: 0 0 12px rgba(90, 250, 231, 0.5);
 }
 
+#contactForm button:disabled {
+    background: #666;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.form-message {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+    animation: fadeIn 0.3s ease;
+}
+
+.form-message.success {
+    background: rgba(90, 250, 231, 0.1);
+    border: 1px solid rgba(90, 250, 231, 0.3);
+    color: #5afae7;
+}
+
+.form-message.error {
+    background: rgba(255, 107, 107, 0.1);
+    border: 1px solid rgba(255, 107, 107, 0.3);
+    color: #ff6b6b;
+}
+
+.form-message p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 footer {
-    background: #1a1a1a;
+    background: #000000;
     color: #cccccc;
     text-align: center;
     padding: 2rem 0;
-    border-top: 1px solid #333;
+    /*border-top: 1px solid #333;*/
 }
 
 @keyframes fadeInUp {
@@ -581,4 +642,18 @@ footer {
     .signature {
         font-size: 1.8rem;
     }
+}
+
+.footer-img{
+    height: 140px;
+    width: auto;
+    max-width: 200px;
+    object-fit: contain;
+}
+
+footer .footer-img,
+footer p{
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 5px;
 }

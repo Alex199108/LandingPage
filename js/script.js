@@ -33,17 +33,49 @@ function scrollToSection(sectionId) {
     }
 }
 
-function handleFormSubmit() {
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
+function handleFormSubmit(e) {
+    e.preventDefault();
     
-    if (name && email && message) {
-        showNotification('Thank you for your message! We\'ll get back to you soon.', 'success');
-        document.getElementById('contactForm').reset();
-    } else {
-        showNotification('Please fill in all fields.', 'error');
-    }
+    const form = document.getElementById('contactForm');
+    const formData = new FormData(form);
+    
+    // Show loading state
+    const submitButton = form.querySelector('button[type="submit"]');
+    const originalText = submitButton.textContent;
+    submitButton.textContent = 'Sending...';
+    submitButton.disabled = true;
+    
+    // Submit to Netlify
+    fetch('/', {
+        method: 'POST',
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString()
+    })
+    .then(() => {
+        // Show success message
+        document.getElementById('form-success').style.display = 'block';
+        document.getElementById('form-error').style.display = 'none';
+        form.reset();
+        
+        // Scroll to success message
+        setTimeout(() => {
+            document.getElementById('form-success').scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'center' 
+            });
+        }, 100);
+    })
+    .catch((error) => {
+        // Show error message
+        document.getElementById('form-error').style.display = 'block';
+        document.getElementById('form-success').style.display = 'none';
+        console.error('Form submission error:', error);
+    })
+    .finally(() => {
+        // Reset button state
+        submitButton.textContent = originalText;
+        submitButton.disabled = false;
+    });
 }
 
 function showNotification(message, type) {
